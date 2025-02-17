@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes or No</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            /* position: relative; */
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: 0.3s ease-in-out;
+            width: 150px;
+            text-align: center;
+        }
+
+        #yesBtn {
+            background-color: green;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: red;
+            color: white;
+            position: absolute;
+        }
+
+        @media (max-width: 600px) {
+            .btn {
+                width: 100px;
+                font-size: 10px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Do you Love Me?</h2>
+    <div class="btn-container">
+        <button id="yesBtn" class="btn" onclick="redirect()">No</button>
+        <button id="noBtn" class="btn" onmouseover="moveButton()">Yes</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            let btn = document.getElementById("noBtn");
+
+            let maxWidth = window.innerWidth - 150; // Prevents from going off-screen
+            let maxHeight = window.innerHeight - 150;
+
+            let x = Math.random() * maxWidth - (maxWidth / 2);
+            let y = Math.random() * maxHeight - (maxHeight / 2);
+
+            btn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function redirect() {
+            window.location.href = "love.html"; // Change to your target page
+        }
+    </script>
+
+</body>
+</html>

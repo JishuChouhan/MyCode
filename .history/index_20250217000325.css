@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.home, .contact, .social, .about{
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    background-color: #f1f1f1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.social{
+    display: flex;
+    justify-content: space-around;
+}
+
+.social li{
+    list-style: none;
+}
+
+.social li a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    line-height: 30px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.social li a:hover{
+    background-color: #666;
+}
+
+@media screen and (max-width: 600px){
+    .home, .contact, .social, .about{
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .social{
+        flex-direction: column;
+    }
+}
+
+/* Hover effect for social media icons */
+
+.social li a:hover .fa {
+    transform: scale(1.5);
+}
+
+/* Fontawesome icons */
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.fa {
+    font-size: 24px;
+}
+
+/* Add hover effect for fontawesome icons */
+
+.fa:hover {
+    color: #ccc;
+}
+
+/* Responsive design for social media icons */
+
+.social li a {
+    width: 35px;
+    height: 35px;
+}

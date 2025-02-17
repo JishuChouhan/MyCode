@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes or No</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .btn-container {
+            position: relative;
+            width: 300px;
+            text-align: center;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: 0.3s ease;
+        }
+        #yesBtn {
+            background-color: red;
+            color: white;
+        }
+        #noBtn {
+            background-color: green;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="img/Snapchat-735368105.jpg" height="200px" width="200px" alt="">
+    <h2>Do you Love Me?</h2>
+    <div class="btn-container">
+        <button id="yesBtn" class="btn" onclick="redirect()">No</button>
+        <button id="noBtn" class="btn" onmouseover="moveButton()">Yes</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            let btn = document.getElementById("noBtn");
+            let x = Math.random() * 200 - 100; // Random movement
+            let y = Math.random() * 200 - 100;
+            btn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function redirect() {
+            window.location.href = "love.html"; // Change to your target page
+        }
+    </script>
+
+</body>
+</html>

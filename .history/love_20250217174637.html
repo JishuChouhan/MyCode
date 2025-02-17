@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Don't Love Me</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background: linear-gradient(to bottom, #000000, #2c3e50);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            opacity: 0;
+            animation: fadeText 3s ease-in-out forwards;
+        }
+
+        .heart {
+            color: red;
+            font-size: 3rem;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .tears {
+            position: absolute;
+            bottom: 50px;
+            opacity: 0.8;
+            animation: fall 2s infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeText {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0px); opacity: 0.8; }
+            100% { transform: translateY(50px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h2>You don't love me... <span class="heart">💔</span></h2>
+    <img class="tears" src="https://i.gifer.com/7PLX.gif" width="100px" alt="Tear drop">
+
+    <script>
+        setTimeout(() => {
+            document.body.innerHTML += "<p style='font-size: 1.5rem; margin-top: 20px;'>But I still miss you... 😢</p>";
+        }, 3000);
+    </script>
+</body>
+</html>
